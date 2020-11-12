@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>User List</title>
+</head>
+<body>
+   <center> <h1>User List</h1> </center>
+
+   <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">User Status</th>
+        <th scope="col">User Type</th>
+        <th scope="col">Date</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in user %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td><a href="{% url 'profile' i.id %}">{{i.username}}</a></td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>{{i.userstatus}}</td>
+        <td>{{i.User_type}}</td>
+        <td>{{i.action_date}}</td>
+      </tr>
+       {% endfor %}
+    </tbody>
+  </table>
+  
+        {{ i }} 
+    
+</body>
+</html>
